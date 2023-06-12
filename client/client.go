@@ -222,7 +222,7 @@ func (cl *Client) realmLogin(realm string) error {
 		NameString: []string{"krbtgt", realm},
 	}
 
-	_, tgsRep, err := cl.TGSREQGenerateAndExchange(spn, cl.Credentials.Domain(), tgt, skey, false)
+	_, tgsRep, err := cl.TGSREQGenerateAndExchange(spn, realm, tgt, skey, false)
 	if err != nil {
 		return err
 	}
